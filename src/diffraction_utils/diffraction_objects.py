@@ -1,6 +1,7 @@
 import numpy as np
 import uuid
 
+
 class DiffractionObject:
     """Class for storing and manipulating diffraction data.
 
@@ -97,10 +98,10 @@ class DiffractionObject:
         self._input_data(
             xarray, yarray, xtype, wavelength, scat_quantity, name, metadata
         )
-        
+
     def _input_data(
-            self, xarray, yarray, xtype, wavelength, scat_quantity, name, metadata
-        ):
+        self, xarray, yarray, xtype, wavelength, scat_quantity, name, metadata
+    ):
         if len(xarray) != len(yarray):
             raise ValueError(
                 "'xarray' and 'yarray' are different lengths.  They must "

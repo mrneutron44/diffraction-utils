@@ -29,7 +29,7 @@ pip install -e .
 
 ### Method 2: Install your package with dependencies sourced from conda-forge
 
-If you haven't already, ensure you have the ``conda-forge`` channel added as the highest priority channel.
+If you haven't already, ensure you have the `conda-forge` channel added as the highest priority channel.
 
 ```bash
 conda config --add channels conda-forge

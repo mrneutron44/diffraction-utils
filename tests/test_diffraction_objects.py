@@ -2,6 +2,7 @@ import pytest
 import numpy as np
 from diffraction_utils.diffraction_objects import DiffractionObject as DO
 
+
 @pytest.mark.parametrize(
     "xarray, yarray, xtype, wavelength, scat_quantity, name, metadata",
     [
@@ -12,7 +13,7 @@ from diffraction_utils.diffraction_objects import DiffractionObject as DO
             1.54,
             "x-ray",
             "sample1",
-            {"sample": "NaCl"}
+            {"sample": "NaCl"},
         ),
         (
             np.array([10, 20, 30]),
@@ -21,11 +22,13 @@ from diffraction_utils.diffraction_objects import DiffractionObject as DO
             1.0,
             "neutron",
             "sample2",
-            {"temperature": "300 K"}
-        )
-    ]
+            {"temperature": "300 K"},
+        ),
+    ],
 )
-def test_diffraction_object_init(xarray, yarray, xtype, wavelength, scat_quantity, name, metadata):
+def test_diffraction_object_init(
+    xarray, yarray, xtype, wavelength, scat_quantity, name, metadata
+):
     do = DO(xarray, yarray, xtype, wavelength, scat_quantity, name, metadata)
 
     assert do.scat_quantity == scat_quantity
